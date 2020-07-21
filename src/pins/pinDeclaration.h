@@ -2,8 +2,8 @@
 
 #include "pins.h"
 
-
-void pinDeclaration() {
+void pinDeclaration()
+{
     pinMode(relayLED, OUTPUT);
     pinMode(relayINFRA, OUTPUT);
 }

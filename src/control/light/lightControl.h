@@ -1,12 +1,18 @@
 #include <Arduino.h>
 
 #include "pins/pins.h"
+#include "getSensorValues/light/getLightSensorValue.h"
+#include "declarateVaribles/variables.h"
 
-void lightControl(){
-    int lightVal = analogRead(sensorLIGHT);
-    if(lightVal < 400){
+void lightControl()
+{
+    int lightVal = getLighrSensorValue();
+    if (lightVal < lightOnValue - lightHysteresis)
+    {
+        digitalWrite(relayLED, LOW); //a relay LOW állapotban zár!!
+    }
+    else if (lightVal > lightOnValue)
+    {
         digitalWrite(relayLED, HIGH);
-    } else if(lightVal > 600) {
-        digitalWrite(relayLED, LOW);
     }
 }

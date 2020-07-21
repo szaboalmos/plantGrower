@@ -3,15 +3,15 @@
 #include <LiquidCrystal_I2C.h>
 
 //headers
-#include "getSensorValues/temperature/getTemperatureSensorValue.h"
+//#include "getSensorValues/temperature/getTemperatureSensorValue.h"
 #include "pins/pinDeclaration.h"
 #include "control/light/lightControl.h"
+#include "control/temperature/temperatureControl.h"
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 void setup()
 {
-  Serial.begin(9600);
   sensor.begin();
   lcd.init();
   lcd.backlight();
@@ -21,8 +21,9 @@ void setup()
 void loop()
 {
   lcd.setCursor(2, 0);
-  lcd.print("sdf");
+  lcd.print(getTemperatureSensorValue());
   lcd.setCursor(2, 1);
-  lcd.print(analogRead(sensorLIGHT));
+  lcd.print(getLighrSensorValue());
   lightControl();
+  temperatureControl();
 }
