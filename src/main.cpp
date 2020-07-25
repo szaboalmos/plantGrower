@@ -4,11 +4,12 @@
 
 //headers
 //#include "getSensorValues/temperature/getTemperatureSensorValue.h"
+#include "screen/screen.h "
 #include "pins/pinDeclaration.h"
 #include "control/light/lightControl.h"
 #include "control/temperature/temperatureControl.h"
-
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+#include "rotatyEncoder/rotatyEncoder.h"
+#include "rotatyEncoder/rotatyVariables.h"
 
 void setup()
 {
@@ -20,10 +21,6 @@ void setup()
 
 void loop()
 {
-  lcd.setCursor(2, 0);
-  lcd.print(getTemperatureSensorValue());
-  lcd.setCursor(2, 1);
-  lcd.print(getLighrSensorValue());
-  lightControl();
-  temperatureControl();
+  rotatayDat = rotatyEncoder(rotatayDat);
+  screen(rotatayDat / 4);
 }
