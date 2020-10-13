@@ -6,8 +6,8 @@
 //#include "getSensorValues/temperature/getTemperatureSensorValue.h"
 #include "screen/screen.h "
 #include "pins/pinDeclaration.h"
-#include "control/light/lightControl.h"
-#include "control/temperature/temperatureControl.h"
+//#include "control/light/lightControl.h"
+//#include "control/temperature/temperatureControl.h"
 #include "rotatyEncoder/rotatyEncoder.h"
 #include "rotatyEncoder/rotatyVariables.h"
 

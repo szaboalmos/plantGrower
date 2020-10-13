@@ -4,6 +4,7 @@
 #include "pins/pins.h"
 #include "declarateVaribles/variables.h"
 
+
 void temperatureControl()
 {
     float tempVal = getTemperatureSensorValue();
